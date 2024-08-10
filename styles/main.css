@@ -1,0 +1,480 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Righteous&display=swap');
+
+*,
+*::after,
+*::before {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+	list-style: none;
+	text-decoration: none;
+	font-family: 'Outfit', sans-serif;
+}
+
+html {
+	scroll-behavior: smooth;
+	overflow-x: hidden !important;
+}
+
+:root {
+	--mainColor: #7248b6;
+	--extraColor: #f66f4d;
+	--secondColor: #d8d0f4;
+	--thirdColor: #eff1f3;
+	--darkColor: #323335;
+	--whiteColor: #ffffff;
+	--transition: 200ms;
+	--hoverColor: #5f3c97;
+}
+
+body {
+	width: 100%;
+}
+
+.max-width {
+	max-width: 1355px;
+	margin: 0 auto;
+	padding: 0 30px;
+}
+
+header {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 20px 30px !important;
+	background: var(--secondColor);
+	position: sticky;
+	top: 0;
+	border-bottom: 1px solid var(--whiteColor);
+	z-index: 100;
+}
+
+.website-logo .logo {
+	font-family: 'Righteous', sans-serif !important;
+	color: var(--darkColor);
+	font-size: 30px;
+}
+
+.logo b {
+	color: var(--mainColor);
+}
+
+.navbar {
+	width: max-content;
+}
+
+.menu {
+	display: flex;
+	align-items: center;
+	gap: 5px;
+}
+
+.menu li a {
+	color: var(--darkColor);
+	padding: 10px 16px;
+	transition: var(--transition);
+}
+
+.menu li a:hover {
+	background: var(--mainColor);
+	color: var(--whiteColor);
+}
+
+a.active {
+	background: var(--mainColor);
+	padding: 10px 16px;
+	color: var(--whiteColor) !important;
+}
+
+/* ====== HAMBURGER MENU & MOBILE MENU ====== */
+
+.menuButton {
+	width: 38px;
+	height: 38px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background: var(--mainColor);
+	border-radius: 50%;
+	cursor: pointer;
+	transition: var(--transition);
+	z-index: 80;
+	display: none;
+}
+
+.menuButton:hover {
+	background: var(--hoverColor);
+}
+
+.menuButton .line {
+	width: 22px;
+	height: 3px;
+	background: var(--whiteColor);
+	border-radius: 5px;
+	position: relative;
+}
+
+.menuButton .line::before,
+.menuButton .line::after {
+	content: '';
+	position: absolute;
+	width: 22px;
+	height: 3px;
+	background: var(--whiteColor);
+	border-radius: 5px;
+	bottom: 0;
+	margin: 0 auto;
+	transition: var(--transition);
+}
+
+.menuButton .line::before {
+	transform: translateY(7px);
+	width: 16px;
+}
+
+.menuButton .line::after {
+	transform: translateY(-7px);
+	width: 20px;
+}
+
+.menuButton.active .line {
+	background: transparent;
+}
+
+.menuButton.active .line::after {
+	width: 22px;
+	transform: rotate(45deg);
+}
+
+.menuButton.active .line::before {
+	width: 22px;
+	transform: rotate(-45deg);
+}
+
+/* ====== HAMBURGER MENU & MOBILE MENU ====== */
+
+/* ============================= H O M E  S E C T I O N ============================= */
+/* ALSO  ABOUT SECTION */
+.home-section {
+    background: url('../images/home.jpg');
+    background-repeat: no-repeat;
+	background-size: cover;
+	min-height: 85vh;
+    height: auto;
+	display: flex;
+	align-items: center;
+	border-radius: 0 0 40px 40px;
+}
+
+.home-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding-top: 30px;
+}
+
+.home-heading {
+    font-size: 54px;
+    line-height: 100%;
+    color: var(--whiteColor);
+}
+
+.home-text {
+    margin-top: 20px;
+    color: var(--whiteColor);
+	text-align: justify;
+}
+
+.home-content .left-side {
+    width: 600px;
+}
+
+.home-buttons {
+    margin-top: 30px;
+    display: flex;
+    gap: 10px;
+}
+
+.home-buttons a {
+    display: inline-flex;
+    gap: 5px;
+    background: var(--mainColor);
+    color: var(--whiteColor);
+    padding: 12px 20px;
+    border-radius: 8px;
+    transition: var(--transition);
+}
+
+.home-buttons a:hover {
+    background: var(--hoverColor);
+}
+
+.home-buttons img {
+    display: block;
+}
+
+/* Remove the right-side styles as it's no longer needed */
+
+.about-content {
+	color: var(--darkColor);
+	
+}
+.about-content p{
+	text-align: justify;
+}
+.about-content .part-1 {
+	text-align: right;
+}
+
+.about-content .part-1,
+.about-content .part-2 {
+	display: flex;
+	align-items: center;
+	justify-content: space-evenly;
+	flex-wrap: wrap;
+	margin: 40px 0 40px 0;
+}
+
+.part-1 .left-side img,
+.part-2 .left-side img,
+.part-1 .right-side,
+.part-2 .right-side {
+	width: 450px;
+}
+.about-content .part-2 {
+	flex-direction: row-reverse;
+}
+
+.about-content img {
+	box-shadow: 6px 6px 0 var(--mainColor), -6px -6px 0 var(--mainColor);
+	object-fit: cover;
+}
+
+.part-1 .right-side h2,
+.part-2 .right-side h2 {
+	font-size: 40px;
+}
+
+.part-1 .right-side p,
+.part-2 .right-side p {
+	margin-top: 15px;
+}
+
+/* ============================= H O M E  S E C T I O N E N D ============================= */
+/* ALSO ABOUT SECTION END */
+
+.section-heading {
+	padding: 70px 0 30px 0;
+	color: var(--darkColor);
+	text-align: center;
+}
+
+.section-heading h3 {
+	text-transform: uppercase;
+	color: var(--mainColor);
+}
+
+.section-heading h1 {
+	font-size: 44px;
+}
+
+.section-heading .line {
+	width: 300px;
+	height: 3px;
+	background: var(--mainColor);
+	margin: 20px auto;
+}
+
+/* ============================= S E R V I C E S  & PRODUCTS  S E C T I O N ============================= */
+
+.services-content, .products-content {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+	grid-gap: 30px;
+	padding: 60px 0 60px 0;
+	color: var(--darkColor);
+}
+
+.services-content .service, .products-content .product {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	padding: 15px;
+	text-align: center;
+	transition: var(--transition);
+	border-radius: 20px;
+	cursor: pointer;
+	background: rgba(0, 0, 0, 0.02);
+}
+
+.services-content .service:hover {
+	background: var(--secondColor);
+}
+
+.service img {
+	transition: var(--transition);
+}
+
+.services-content .service:hover img {
+	transform: translateY(-10px);
+}
+
+.service h1,
+.service p {
+	margin-top: 10px;
+}
+
+/* ============================= S E R V I C E S  S E C T I O N E N D  E N D ============================= */
+
+/* ============================= C O N T A C T  S E C T I O N   E N D ============================= */
+
+.contact-content {
+	padding: 20px 0 50px 0;
+}
+
+.contact-content form {
+	display: flex;
+	flex-direction: column;
+	flex-wrap: wrap;
+	gap: 25px;
+	color: var(--darkColor);
+}
+
+form .form-item label,
+form .form-item input,
+form .form-item textarea {
+	display: block;
+	width: 80%;
+	margin: 0 auto;
+}
+
+form .form-item label {
+	font-size: 17px;
+	font-weight: bold;
+	margin-bottom: 6px;
+}
+
+form .form-item input {
+	height: 35px;
+	text-indent: 5px;
+	border-radius: 5px;
+	border: 1px solid var(--hoverColor);
+	font-size: 16px;
+	color: var(--darkColor);
+	padding: 5px;
+	outline: none;
+	transition: var(--transition);
+}
+
+form .form-item textarea {
+	min-height: 150px;
+	padding: 5px;
+	text-indent: 5px;
+	font-size: 16px;
+	border-radius: 5px;
+	border: 1px solid var(--hoverColor);
+	color: var(--darkColor);
+	resize: none;
+	outline: none;
+	transition: var(--transition);
+}
+
+form .form-item input:hover,
+form .form-item textarea:hover {
+	box-shadow: 0 0 5px var(--hoverColor);
+}
+
+form .form-item input:active,
+form .form-item textarea:active {
+	box-shadow: 0 0 5px var(--hoverColor);
+}
+
+form .form-item .submit-button {
+	display: block;
+	margin: 0 auto;
+	width: 250px;
+	border: none;
+	background: var(--mainColor);
+	color: var(--whiteColor);
+	padding: 12px 18px;
+	font-size: 17px;
+	border-radius: 8px;
+	cursor: pointer;
+	transition: var(--transition);
+}
+
+form .form-item .submit-button:hover {
+	background: var(--hoverColor);
+}
+
+form .form-item .submit-button:active {
+	transform: scale(0.95);
+}
+
+/* ============================= C O N T A C T  S E C T I O N  E N D  ============================= */
+
+/* ============================= F O O T E R  S E C T I O N   ============================= */
+
+.footer-section {
+	background: var(--darkColor);
+	color: var(--whiteColor);
+	padding-bottom: 20px;
+}
+
+.footer-content {
+	padding: 30px 0 30px 0;
+	display: flex;
+	justify-content: space-between;
+	flex-wrap: wrap;
+	gap: 30px;
+}
+
+.footer-content .website-logo a {
+	color: var(--whiteColor);
+}
+
+.quick-links a {
+	display: block;
+	margin-bottom: 5px;
+	color: var(--whiteColor);
+}
+
+.social-networks {
+	display: flex;
+	gap: 10px;
+}
+
+.social-networks a img {
+	display: block;
+	transition: var(--transition);
+}
+
+.social-networks a {
+	width: 33px;
+	height: 33px;
+	background: var(--mainColor);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	transition: var(--transition);
+}
+
+.social-networks a:hover {
+	background: var(--hoverColor);
+}
+
+.social-networks a:hover img {
+	transform: scale(0.9);
+}
+
+.footer-section .rights {
+	text-align: center;
+	font-size: 15px;
+	font-weight: 300;
+}
+
+/* ============================= F O O T E R  S E C T I O N  E N D  ============================= */
